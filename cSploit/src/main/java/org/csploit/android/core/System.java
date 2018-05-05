@@ -161,6 +161,7 @@ public class System {
       mServices = new HashMap<>();
       mPorts = new HashMap<>();
 
+      /** 注释掉唤醒锁和wifi锁后正常
       // if we are here, network initialization didn't throw any error, lock wifi
       WifiManager wifiManager = (WifiManager) mContext.getSystemService(Context.WIFI_SERVICE);
 
@@ -179,7 +180,7 @@ public class System {
 
         if (!mWakeLock.isHeld())
           mWakeLock.acquire();
-      }
+      }**/
 
       // set ports
       try {
