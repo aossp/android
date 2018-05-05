@@ -57,7 +57,7 @@ public class InputDialog extends AlertDialog{
     this.setView(mEditText, 40, 0, 40, 0);
 
     final InputDialogListener listener = inputDialogListener;
-    this.setButton(BUTTON_POSITIVE, "Ok", new DialogInterface.OnClickListener() {
+    this.setButton(BUTTON_POSITIVE, activity.getString(R.string.ok), new DialogInterface.OnClickListener() {
       public void onClick(DialogInterface dialog, int id) {
         if(listener != null)
           listener.onInputEntered(mEditText.getText() + "");

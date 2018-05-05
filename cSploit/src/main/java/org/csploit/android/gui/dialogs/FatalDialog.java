@@ -24,6 +24,7 @@ import android.content.DialogInterface;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.widget.TextView;
+import org.csploit.android.R;
 
 public class FatalDialog extends AlertDialog{
   public FatalDialog(String title, String message, boolean html, final Activity activity){
@@ -45,7 +46,7 @@ public class FatalDialog extends AlertDialog{
     }
 
     this.setCancelable(false);
-    this.setButton(BUTTON_POSITIVE, "Ok", new DialogInterface.OnClickListener(){
+    this.setButton(BUTTON_POSITIVE, activity.getString(R.string.ok), new DialogInterface.OnClickListener(){
       public void onClick(DialogInterface dialog, int id){
         activity.finish();
       }

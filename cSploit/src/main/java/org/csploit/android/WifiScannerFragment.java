@@ -186,7 +186,8 @@ public class WifiScannerFragment extends ListFragment
             getActivity().setTheme(R.style.AppTheme);
             v.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.background_window));
         }
-        mWifiManager = (WifiManager) getActivity().getSystemService(Context.WIFI_SERVICE);
+        /**ADD getApplicationContext().  compatible Android N**/
+        mWifiManager = (WifiManager) getActivity().getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         mClipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
         mWifiMatcher = new WirelessMatcher(getResources().openRawResource(R.raw.alice));
         mScanReceiver = new ScanReceiver();

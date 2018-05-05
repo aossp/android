@@ -42,7 +42,7 @@ public class CustomFilterDialog extends AlertDialog{
     this.setTitle(title);
     this.setView(view);
 
-    this.setButton(BUTTON_POSITIVE, "Ok", new DialogInterface.OnClickListener(){
+    this.setButton(BUTTON_POSITIVE, activity.getString(R.string.ok), new DialogInterface.OnClickListener(){
       public void onClick(DialogInterface dialog, int id){
         assert view != null;
         String f0 = ((EditText) view.findViewById(R.id.fromText0)).getText() + "".trim(),

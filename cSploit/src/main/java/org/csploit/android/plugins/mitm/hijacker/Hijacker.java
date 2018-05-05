@@ -520,6 +520,7 @@ public class Hijacker extends AppCompatActivity {
       mSpoof.start(new OnSessionReadyListener() {
         @Override
         public void onSessionReady() {
+		mHijackToggleButton.setText(R.string.start);
           Hijacker.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {

@@ -171,7 +171,7 @@ public class System {
         mWifiLock.acquire();
 
       // wake lock if enabled
-      if (getSettings().getBoolean("PREF_WAKE_LOCK", true)) {
+      if (getSettings().getBoolean("PREF_WAKE_LOCK", false)) {
         PowerManager powerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
 
         if (mWakeLock == null)

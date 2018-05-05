@@ -146,7 +146,7 @@ public class Sessions extends Plugin {
     UIThread = this;
 
     if(System.getMsfRpc()==null) {
-      new FinishDialog(getString(R.string.error),"MSF RPC not connected",Sessions.this).show();
+      new FinishDialog(getString(R.string.error),getString(R.string.msfrpc_notconnect_error),Sessions.this).show();
       return;
 		}
 

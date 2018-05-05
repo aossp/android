@@ -6,7 +6,7 @@
     <PreferenceCategory android:title="@string/pref_general">
 
         <SwitchPreferenceCompat
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="PREF_WAKE_LOCK"
             android:summary="@string/pref_wake_lock_desc"
             android:title="@string/pref_wake_lock" />
@@ -164,7 +164,7 @@
     <PreferenceCategory android:title="@string/pref_msf">
 
         <SwitchPreferenceCompat
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="MSF_ENABLED"
             android:summary="@string/pref_msf_enable_desc"
             android:title="@string/pref_msf_enable" />

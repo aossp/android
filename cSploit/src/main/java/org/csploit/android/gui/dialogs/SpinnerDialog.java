@@ -53,7 +53,7 @@ public class SpinnerDialog extends AlertDialog{
     this.setMessage(message);
     this.setView(mSpinner);
 
-    this.setButton(BUTTON_POSITIVE, "Ok", new DialogInterface.OnClickListener(){
+    this.setButton(BUTTON_POSITIVE, activity.getString(R.string.ok), new DialogInterface.OnClickListener(){
       public void onClick(DialogInterface dialog, int id){
         listener.onItemSelected(mSelected);
       }

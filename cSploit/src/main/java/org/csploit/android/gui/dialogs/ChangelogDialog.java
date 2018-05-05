@@ -67,7 +67,7 @@ public class ChangelogDialog extends AlertDialog
     mLoader.dismiss();
 
     this.setCancelable(false);
-    this.setButton(BUTTON_POSITIVE, "Ok", new DialogInterface.OnClickListener(){
+    this.setButton(BUTTON_POSITIVE, activity.getString(R.string.ok), new DialogInterface.OnClickListener(){
       public void onClick(DialogInterface dialog, int id){
         dialog.dismiss();
       }

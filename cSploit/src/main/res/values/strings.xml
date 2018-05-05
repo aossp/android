@@ -513,7 +513,6 @@
     <string name="JNI_crash_detected">The JNI library has crashed previously.  Reporting the circumstances leading to the crash would be appreciated.</string>
     <string name="update_cancelled">Update cancelled</string>
     <string name="child_not_started">Cannot start process</string>
-    <string name="msfrpcd_killed">MSF RPC daemon killed</string>
     <string name="msfrcd_start_failed">MSF RPC daemon failed to start</string>
     <string name="msf_connection_failed">Connection to the MSF RPC daemon FAILED!</string>
     <string name="net_discovery_start_failed">Network discovery FAILED to start!</string>
@@ -545,4 +544,6 @@
     <!-- permissions -->
     <string name="permissions_fail">Sorry, you need to approve both permission requests.</string>
     <string name="permissions_succeed">Thanks!</string>
+    <string name="msfrpcd_killed">MSF RPC daemon killed</string>
+    <string name="msfrpc_notconnect_error">MSF RPC not connected</string>
 </resources>

@@ -42,7 +42,7 @@ public class AboutDialog extends AlertDialog{
     this.setTitle(activity.getString(R.string.about_csploit_v_) + System.getAppVersionName());
     this.setView(view);
 
-    this.setButton(BUTTON_POSITIVE, "Ok", new DialogInterface.OnClickListener() {
+    this.setButton(BUTTON_POSITIVE, activity.getString(R.string.ok), new DialogInterface.OnClickListener() {
       public void onClick(DialogInterface dialog, int id) {
         dialog.dismiss();
       }
