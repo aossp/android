@@ -44,9 +44,9 @@ public class Target implements Comparable<Target>
 {
 
   public enum Type{
-    NETWORK,
-    ENDPOINT,
-    REMOTE;
+    NETWORK,//子网掩码
+    ENDPOINT,//一般终端
+    REMOTE;//应该是自定义的远程终端(即IP不在局域网内的终端)--不确定
 
     public static Type fromString(String type) throws Exception{
       if(type != null){
