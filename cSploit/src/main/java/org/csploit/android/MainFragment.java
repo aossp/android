@@ -191,11 +191,14 @@ public class MainFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                //如果mActionMode不为null, 说明正在进行多选操作(长按target进入多选操作)
+                //这时点击target不是进入相应target的攻击界面，而只是选择target
                 if (mActionMode != null) {
                     mTargetAdapter.toggleSelection(position);
                     return;
                 }
 
+                //如果mActionMode为null，说明不是多选操作，进入target的攻击界面
                 Target target = (Target) mTargetAdapter.getItem(position);
                 System.setCurrentTarget(target);
 
@@ -220,15 +223,19 @@ public class MainFragment extends Fragment {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 Target t = (Target) mTargetAdapter.getItem(position);
+                //如果长按的target是子网掩码，则弹出设置别名对话框
                 if (t.getType() == Target.Type.NETWORK) {
                     if (mActionMode == null)
                         targetAliasPrompt(t);
                     return true;
                 }
+
+                //如果actionMode为null，则用回调函数初始化actionMode
                 if (mActionMode == null) {
                     mTargetAdapter.clearSelection();
                     mActionMode = ((AppCompatActivity) getActivity()).startSupportActionMode(mActionModeCallback);
                 }
+                //反转选择target(和单击效果一样)
                 mTargetAdapter.toggleSelection(position);
                 return true;
             }
@@ -240,6 +247,7 @@ public class MainFragment extends Fragment {
 
         System.setTargetListObserver(mTargetAdapter);
 
+        //注册广播接收器
         mRadarReceiver.register(getActivity());
         mUpdateReceiver.register(getActivity());
         mWipeReceiver.register(getActivity());
@@ -552,6 +560,7 @@ public class MainFragment extends Fragment {
             return true;
         }
 
+        //根据选择的target数目改变ActionMode的title和菜单图标
         public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
             int i = mTargetAdapter.getSelectedCount();
             mode.setTitle(i + " " + getString((i > 1 ? R.string.targets_selected : R.string.target_selected)));
@@ -980,6 +989,7 @@ public class MainFragment extends Fragment {
                 mActionMode.finish();
         }
 
+        //反转选择target
         public void toggleSelection(int position) {
             synchronized (this) {
                 Target t = list.get(position);
@@ -988,6 +998,7 @@ public class MainFragment extends Fragment {
             notifyDataSetChanged();
             if (mActionMode != null) {
                 if (getSelectedCount() > 0)
+                    //回调ActionMode的onPrepareActionMode方法
                     mActionMode.invalidate();
                 else
                     mActionMode.finish();

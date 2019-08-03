@@ -238,6 +238,7 @@ public class System {
     }
   }
 
+  //TODO HanLiang 研究一下是做什么的
   private static void startCoreDaemon() throws SuException, DaemonException {
     boolean access_granted = false;
     DataOutputStream writer = null;
@@ -325,6 +326,7 @@ public class System {
     Services.getNetworkRadar().onAutoScanChanged();
   }
 
+  //TODO HanLiang 调用了很多native方法，稍后研究一下
   public static void initCore() throws DaemonException, SuException {
 
     if (mCoreInitialized)
@@ -1050,6 +1052,7 @@ public class System {
     return mInitialized;
   }
 
+  //通过判断org.csploit.android/files/VERSION文件是否存在来判断核心是否安装
   public static boolean isCoreInstalled() {
     return new File(getCorePath() + "/VERSION").exists();
   }
